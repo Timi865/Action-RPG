@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://celsu1s6d1liy"]
+[gd_scene load_steps=40 format=3 uid="uid://celsu1s6d1liy"]
 
 [ext_resource type="Texture2D" uid="uid://di3k5tnyggucr" path="res://player/player.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://dx0i7o4mnhcha" path="res://player/player.gd" id="1_rkbax"]
@@ -241,6 +241,29 @@ _data = {
 &"stand_up": SubResource("Animation_yw30f")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g6k8r"]
+animation = &"attack_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2ieo8"]
+animation = &"attack_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ebec5"]
+animation = &"attack_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yllr7"]
+animation = &"attack_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_kb6p2"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_g6k8r")
+blend_point_0/pos = Vector2(-0.90000004, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_2ieo8")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_ebec5")
+blend_point_2/pos = Vector2(0.90000004, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_yllr7")
+blend_point_3/pos = Vector2(0, -1)
+blend_mode = 1
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rkbax"]
 animation = &"run_left"
 
@@ -315,6 +338,8 @@ graph_offset = Vector2(-179, -164)
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_yw30f"]
+states/AttackState/node = SubResource("AnimationNodeBlendSpace2D_kb6p2")
+states/AttackState/position = Vector2(403, 250)
 states/MoveState/node = SubResource("AnimationNodeStateMachine_rkbax")
 states/MoveState/position = Vector2(403, 100)
 transitions = ["Start", "MoveState", SubResource("AnimationNodeStateMachineTransition_g1dw6")]
@@ -345,5 +370,6 @@ libraries = {
 tree_root = SubResource("AnimationNodeBlendTree_qjkh3")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
+parameters/StateMachine/AttackState/blend_position = Vector2(0, 0)
 parameters/StateMachine/MoveState/RunState/blend_position = Vector2(-0.90575343, 0.005464554)
 parameters/StateMachine/MoveState/StandState/blend_position = Vector2(-0.0038356185, 0.99635696)
