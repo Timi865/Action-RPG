@@ -27,3 +27,4 @@ func _physics_process(_delta: float) -> void:
 func update_blend_positions(direction_vector: Vector2) -> void:
 	animation_tree.set("parameters/StateMachine/MoveState/RunState/blend_position", input_vector)
 	animation_tree.set("parameters/StateMachine/MoveState/StandState/blend_position", input_vector)
+	animation_tree.set("parameters/StateMachine/AttackState/blend_position", input_vector)

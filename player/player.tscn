@@ -245,13 +245,13 @@ _data = {
 animation = &"attack_left"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2ieo8"]
-animation = &"attack_up"
+animation = &"attack_down"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ebec5"]
 animation = &"attack_right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yllr7"]
-animation = &"attack_down"
+animation = &"attack_up"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_kb6p2"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_g6k8r")
@@ -379,4 +379,4 @@ advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 parameters/StateMachine/AttackState/blend_position = Vector2(-0.12876713, -0.042641044)
 parameters/StateMachine/MoveState/RunState/blend_position = Vector2(-0.90575343, 0.005464554)
-parameters/StateMachine/MoveState/StandState/blend_position = Vector2(-0.0038356185, 0.99635696)
+parameters/StateMachine/MoveState/StandState/blend_position = Vector2(-0.001079917, 1)
