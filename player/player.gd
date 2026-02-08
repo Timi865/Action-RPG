@@ -15,6 +15,9 @@ func _physics_process(_delta: float) -> void:
 		if input_vector != Vector2.ZERO:
 			var direction_vector: = Vector2(input_vector.x, -input_vector.y)
 			update_blend_positions(direction_vector)
+			
+		if Input.is_action_just_pressed("attack"):
+			playback.travel("AttackState")
 		
 		velocity = input_vector * SPEED
 		move_and_slide()
