@@ -33,7 +33,7 @@ func _physics_process(_delta: float) -> void:
 		"RollState":
 			velocity = last_input_vector * ROLL_SPEED
 			move_and_slide()
-			pass
+		
 	
 func update_blend_positions(direction_vector: Vector2) -> void:
 	animation_tree.set("parameters/StateMachine/MoveState/RunState/blend_position", input_vector)
