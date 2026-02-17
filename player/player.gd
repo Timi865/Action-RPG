@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 100.0
 
 var input_vector: = Vector2.ZERO#by putting this variable at the top this means that i can use it in all functions
+var last_input_vector: = Vector2.ZERO
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/StateMachine/playback") as AnimationNodeStateMachinePlayback
@@ -14,6 +15,7 @@ func _physics_process(_delta: float) -> void:
 			input_vector = Input.get_vector("move_left","move_right", "move_up", "move_down")#WHOA This is legit movement 
 			
 			if input_vector != Vector2.ZERO:
+				last_input_vector = input_vector
 				var direction_vector: = Vector2(input_vector.x, -input_vector.y)
 				update_blend_positions(direction_vector)
 				
