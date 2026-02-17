@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://celsu1s6d1liy"]
+[gd_scene load_steps=46 format=3 uid="uid://celsu1s6d1liy"]
 
 [ext_resource type="Texture2D" uid="uid://di3k5tnyggucr" path="res://player/player.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://dx0i7o4mnhcha" path="res://player/player.gd" id="1_rkbax"]
@@ -275,6 +275,23 @@ tracks/0/keys = {
 "values": [50, 51, 52, 53, 54]
 }
 
+[sub_resource type="Animation" id="Animation_e7oew"]
+resource_name = "roll_down"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [54, 55, 56, 57, 58]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yw30f"]
 _data = {
 &"RESET": SubResource("Animation_8t03j"),
@@ -282,6 +299,7 @@ _data = {
 &"attack_left": SubResource("Animation_ebec5"),
 &"attack_right": SubResource("Animation_2ieo8"),
 &"attack_up": SubResource("Animation_yllr7"),
+&"roll_down": SubResource("Animation_e7oew"),
 &"roll_left": SubResource("Animation_tqiix"),
 &"roll_right": SubResource("Animation_wodsf"),
 &"roll_up": SubResource("Animation_32hag"),
