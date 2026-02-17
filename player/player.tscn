@@ -413,10 +413,10 @@ animation = &"roll_left"
 animation = &"roll_right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tqiix"]
-animation = &"roll_up"
+animation = &"roll_down"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e7oew"]
-animation = &"roll_down"
+animation = &"roll_up"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_c35mf"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_wodsf")
@@ -484,4 +484,4 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/StateMachine/AttackState/blend_position = Vector2(-0.12876713, -0.042641044)
 parameters/StateMachine/MoveState/RunState/blend_position = Vector2(-0.90575343, 0.005464554)
 parameters/StateMachine/MoveState/StandState/blend_position = Vector2(-0.001079917, 1)
-parameters/StateMachine/RollState/blend_position = Vector2(-0.022678196, 0.1319797)
+parameters/StateMachine/RollState/blend_position = Vector2(0.0032397509, 1)

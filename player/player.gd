@@ -19,13 +19,21 @@ func _physics_process(_delta: float) -> void:
 				
 			if Input.is_action_just_pressed("attack"):
 				playback.travel("AttackState")
+				
+			if Input.is_action_just_pressed("roll"):
+				playback.travel("RollState")
 			
 			velocity = input_vector * SPEED
 			move_and_slide()
 		"AttackState":
+			pass
+		"RollState":
+			
+			move_and_slide()
 			pass
 	
 func update_blend_positions(direction_vector: Vector2) -> void:
 	animation_tree.set("parameters/StateMachine/MoveState/RunState/blend_position", input_vector)
 	animation_tree.set("parameters/StateMachine/MoveState/StandState/blend_position", input_vector)
 	animation_tree.set("parameters/StateMachine/AttackState/blend_position", input_vector)
+	animation_tree.set("parameters/StateMachine/RollState/blend_position", input_vector)
