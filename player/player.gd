@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 100.0
+const ROLL_SPEED = 125
 
 var input_vector: = Vector2.ZERO#by putting this variable at the top this means that i can use it in all functions
 var last_input_vector: = Vector2.ZERO
@@ -30,7 +31,7 @@ func _physics_process(_delta: float) -> void:
 		"AttackState":
 			pass
 		"RollState":
-			
+			velocity = last_input_vector * ROLL_SPEED
 			move_and_slide()
 			pass
 	
