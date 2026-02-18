@@ -486,4 +486,5 @@ parameters/StateMachine/MoveState/StandState/blend_position = Vector2(-0.0010799
 parameters/StateMachine/RollState/blend_position = Vector2(0.0032397509, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
 position_smoothing_enabled = true
