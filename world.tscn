@@ -5,7 +5,10 @@
 
 [node name="World" type="Node2D"]
 
-[node name="GrassBackround" type="TextureRect" parent="."]
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(320, 192)
+
+[node name="GrassBackround" type="TextureRect" parent="Parallax2D"]
 offset_right = 320.0
 offset_bottom = 192.0
 texture = ExtResource("1_fj7yv")
