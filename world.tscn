@@ -7,7 +7,7 @@
 
 [node name="GrassBackround" type="TextureRect" parent="."]
 offset_right = 320.0
-offset_bottom = 184.0
+offset_bottom = 192.0
 texture = ExtResource("1_fj7yv")
 stretch_mode = 1
 
