@@ -17,5 +17,6 @@ texture = ExtResource("1_brfkd")
 shape = SubResource("CapsuleShape2D_nnvrw")
 
 [node name="LargeShadow" type="Sprite2D" parent="."]
-position = Vector2(0, 11)
+show_behind_parent = true
+position = Vector2(0, 8)
 texture = ExtResource("2_nnvrw")
