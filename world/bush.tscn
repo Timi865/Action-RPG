@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://pal71y3n2g4k"]
+[gd_scene load_steps=4 format=3 uid="uid://pal71y3n2g4k"]
 
 [ext_resource type="Texture2D" uid="uid://dah8adkk0k3tq" path="res://world/bush.png" id="1_8cy4n"]
+[ext_resource type="Texture2D" uid="uid://dxfmwwra75wde" path="res://shadows/large_shadow.png" id="2_38vgs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_28u5p"]
 radius = 12.0415945
@@ -14,3 +15,7 @@ texture = ExtResource("1_8cy4n")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_28u5p")
+
+[node name="LargeShadow" type="Sprite2D" parent="."]
+position = Vector2(0, 9)
+texture = ExtResource("2_38vgs")

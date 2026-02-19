@@ -1,7 +1,8 @@
-[gd_scene load_steps=53 format=3 uid="uid://celsu1s6d1liy"]
+[gd_scene load_steps=54 format=3 uid="uid://celsu1s6d1liy"]
 
 [ext_resource type="Texture2D" uid="uid://di3k5tnyggucr" path="res://player/player.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://dx0i7o4mnhcha" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://dv7hm1u4da8rs" path="res://shadows/medium_shadow.png" id="3_g1dw6"]
 
 [sub_resource type="Animation" id="Animation_8t03j"]
 length = 0.001
@@ -493,3 +494,7 @@ position_smoothing_enabled = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, -12)
 polygon = PackedVector2Array(0, 18, -5, 11, 0, 5, 5, 11)
+
+[node name="MediumShadow" type="Sprite2D" parent="."]
+position = Vector2(0, 5)
+texture = ExtResource("3_g1dw6")
