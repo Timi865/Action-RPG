@@ -17,6 +17,8 @@ offset_bottom = 192.0
 texture = ExtResource("1_fj7yv")
 stretch_mode = 1
 
+[node name="DirtTileMapLayer" type="TileMapLayer" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("1_f3sb7")]
 position = Vector2(69, 91)
 
