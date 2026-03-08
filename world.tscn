@@ -500,7 +500,6 @@ texture_region_size = Vector2i(32, 32)
 9:1/0/terrains_peering_bit/bottom_side = 0
 9:1/0/terrains_peering_bit/bottom_left_corner = 0
 9:1/0/terrains_peering_bit/left_side = 0
-9:1/0/terrains_peering_bit/top_left_corner = 0
 9:1/0/terrains_peering_bit/top_side = 0
 9:1/0/terrains_peering_bit/top_right_corner = 0
 0:2/0 = 0
@@ -770,7 +769,7 @@ position = Vector2(128, 216)
 position = Vector2(320, 56)
 
 [node name="Bush4" parent="." instance=ExtResource("3_tlwt5")]
-position = Vector2(288, 312)
+position = Vector2(288, 304)
 
 [node name="Bush5" parent="." instance=ExtResource("3_tlwt5")]
 position = Vector2(352, 88)
