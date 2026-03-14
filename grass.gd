@@ -7,4 +7,4 @@ func _ready() -> void:
 
 func _on_area_2d_area_entered(other_area_2d: Area2D) -> void:
 	queue_free()
-	print("grass area entered")
+	#print("grass area entered")
