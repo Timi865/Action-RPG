@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtxs2i7ikoksy"]
+[gd_scene load_steps=4 format=3 uid="uid://dtxs2i7ikoksy"]
 
 [ext_resource type="Texture2D" uid="uid://fklhmu1ns15s" path="res://world/grass.png" id="1_kl2qe"]
+[ext_resource type="Script" uid="uid://bki2hrnyjsdj0" path="res://grass.gd" id="1_mw2ei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qnaq"]
+size = Vector2(16, 16)
 
 [node name="Grass" type="Node2D"]
+script = ExtResource("1_mw2ei")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_kl2qe")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_2qnaq")
