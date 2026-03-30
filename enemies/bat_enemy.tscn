@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbcabvwcdgiwt"]
+[gd_scene load_steps=15 format=3 uid="uid://bbcabvwcdgiwt"]
 
+[ext_resource type="Script" uid="uid://dxe4puknf14da" path="res://enemies/bat_enemy.gd" id="1_5gx0a"]
 [ext_resource type="Texture2D" uid="uid://2vvf1p263oog" path="res://enemies/bat.png" id="1_e7gs6"]
 [ext_resource type="Texture2D" uid="uid://bc85sanc871rv" path="res://shadows/small_shadow.png" id="2_5gx0a"]
 
@@ -72,13 +73,14 @@ nodes/StateMachine/position = Vector2(20, 100)
 node_connections = [&"output", 0, &"StateMachine"]
 
 [node name="BatEnemy" type="CharacterBody2D"]
+script = ExtResource("1_5gx0a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_e7gs6")
 offset = Vector2(0, -4)
 hframes = 5
 
-[node name="shadow" type="Sprite2D" parent="."]
+[node name="ShadowSprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
 texture = ExtResource("2_5gx0a")
 
