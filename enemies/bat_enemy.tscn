@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://bbcabvwcdgiwt"]
+
+[ext_resource type="Texture2D" uid="uid://2vvf1p263oog" path="res://enemies/bat.png" id="1_e7gs6"]
+[ext_resource type="Texture2D" uid="uid://bc85sanc871rv" path="res://shadows/small_shadow.png" id="2_5gx0a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_grp10"]
+radius = 7.0
+
+[sub_resource type="Animation" id="Animation_erta8"]
+resource_name = "fly"
+length = 0.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_ww8v4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_boacx"]
+_data = {
+&"RESET": SubResource("Animation_ww8v4"),
+&"fly": SubResource("Animation_erta8")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f4281"]
+animation = &"fly"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v72ps"]
+animation = &"fly"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gvrg5"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m7u13"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_udr2s"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ss11r"]
+states/Chase/node = SubResource("AnimationNodeAnimation_f4281")
+states/Chase/position = Vector2(371, 194)
+states/Idle/node = SubResource("AnimationNodeAnimation_v72ps")
+states/Idle/position = Vector2(371, 100)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_gvrg5"), "Idle", "Chase", SubResource("AnimationNodeStateMachineTransition_m7u13"), "Chase", "Idle", SubResource("AnimationNodeStateMachineTransition_udr2s")]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_dmpjy"]
+graph_offset = Vector2(-384.33813, 49.19452)
+nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_ss11r")
+nodes/StateMachine/position = Vector2(20, 100)
+node_connections = [&"output", 0, &"StateMachine"]
+
+[node name="BatEnemy" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e7gs6")
+offset = Vector2(0, -4)
+hframes = 5
+
+[node name="shadow" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture = ExtResource("2_5gx0a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_grp10")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_boacx")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_dmpjy")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
