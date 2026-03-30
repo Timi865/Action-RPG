@@ -7,6 +7,21 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_grp10"]
 radius = 7.0
 
+[sub_resource type="Animation" id="Animation_ww8v4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_erta8"]
 resource_name = "fly"
 length = 0.5
@@ -23,21 +38,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4]
-}
-
-[sub_resource type="Animation" id="Animation_ww8v4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_boacx"]
@@ -67,7 +67,7 @@ states/Idle/position = Vector2(371, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_gvrg5"), "Idle", "Chase", SubResource("AnimationNodeStateMachineTransition_m7u13"), "Chase", "Idle", SubResource("AnimationNodeStateMachineTransition_udr2s")]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_dmpjy"]
-graph_offset = Vector2(-384.33813, 49.19452)
+graph_offset = Vector2(-321.4451, -66.56589)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_ss11r")
 nodes/StateMachine/position = Vector2(20, 100)
 node_connections = [&"output", 0, &"StateMachine"]
