@@ -76,6 +76,7 @@ nodes/StateMachine/position = Vector2(20, 100)
 node_connections = [&"output", 0, &"StateMachine"]
 
 [node name="BatEnemy" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_5gx0a")
 aggrorange = 104
 
