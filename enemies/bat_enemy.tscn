@@ -56,8 +56,11 @@ animation = &"fly"
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m7u13"]
+advance_mode = 2
+advance_expression = "is_player_in_range() "
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_udr2s"]
+advance_expression = "not is_player_in_range()"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ss11r"]
 states/Chase/node = SubResource("AnimationNodeAnimation_f4281")
@@ -74,6 +77,7 @@ node_connections = [&"output", 0, &"StateMachine"]
 
 [node name="BatEnemy" type="CharacterBody2D"]
 script = ExtResource("1_5gx0a")
+aggrorange = 104
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_e7gs6")
