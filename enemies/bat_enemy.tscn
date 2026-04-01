@@ -79,6 +79,7 @@ node_connections = [&"output", 0, &"StateMachine"]
 collision_layer = 4
 motion_mode = 1
 script = ExtResource("1_5gx0a")
+aggrorange = 104
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_e7gs6")
@@ -105,4 +106,3 @@ anim_player = NodePath("../AnimationPlayer")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(8, 0)
-collision_mask = 3
