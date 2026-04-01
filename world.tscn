@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://c7uexkcgncr06"]
+[gd_scene load_steps=9 format=4 uid="uid://c7uexkcgncr06"]
 
 [ext_resource type="PackedScene" uid="uid://celsu1s6d1liy" path="res://player/player.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://dt0gc4mtbxtk2" path="res://world/grass_background.png" id="1_fj7yv"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://ov3y3fx6va2c" path="res://tree.tscn" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://dtxs2i7ikoksy" path="res://grass.tscn" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://bbcabvwcdgiwt" path="res://enemies/bat_enemy.tscn" id="8_gbfbk"]
-[ext_resource type="PackedScene" uid="uid://bigdrf4dwpck8" path="res://effects/grass_effect.tscn" id="8_ioo17"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -101,75 +100,57 @@ position = Vector2(40, 152)
 
 [node name="Grass" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(72, 152)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass2" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(88, 152)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass3" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(200, 248)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass4" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(296, 344)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass5" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(568, 224)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass6" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(552, 104)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass7" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(280, 72)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass8" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(40, 40)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass13" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(56, 40)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass14" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(72, 40)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass15" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(88, 40)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass16" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(104, 40)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass17" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(120, 40)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass9" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(72, 344)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass10" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(88, 232)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass11" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(232, 280)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
 [node name="Grass12" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(504, 104)
-GRASS_EFFECT = ExtResource("8_ioo17")
 
-[node name="BatEnemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_gbfbk")]
-position = Vector2(120, 112)
-player = NodePath("../Player")
+[node name="BatEnemy" parent="." instance=ExtResource("8_gbfbk")]
+position = Vector2(192, 152)
 
 [node name="BatEnemy2" parent="." instance=ExtResource("8_gbfbk")]
 position = Vector2(360, 144)
