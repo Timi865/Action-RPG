@@ -78,7 +78,7 @@ node_connections = [&"output", 0, &"StateMachine"]
 [node name="BatEnemy" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_5gx0a")
-aggrorange = 104
+aggrorange = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_e7gs6")
@@ -102,3 +102,6 @@ libraries = {
 tree_root = SubResource("AnimationNodeBlendTree_dmpjy")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(8, 0)
