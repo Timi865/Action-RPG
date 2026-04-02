@@ -18,7 +18,7 @@ func _physics_process(_delta: float) -> void:
 			
 
 func move_state(delta: float) -> void:
-	input_vector = Input.get_vector("move_left","move_right", "move_up", "move_down")#WHOA This is legit movement 
+	input_vector = Input.get_vector("move_left","move_right", "move_up", "move_down")#This is movement
 			
 	if input_vector != Vector2.ZERO:
 		last_input_vector = input_vector
