@@ -571,5 +571,6 @@ texture = ExtResource("3_g1dw6")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("4_yw30f")
+metadata/_custom_type_script = "uid://bpmoxb3dgugjo"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
