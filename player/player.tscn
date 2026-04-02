@@ -570,6 +570,8 @@ position = Vector2(-1, 5)
 texture = ExtResource("3_g1dw6")
 
 [node name="SwordHitbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
 script = ExtResource("4_yw30f")
 metadata/_custom_type_script = "uid://bpmoxb3dgugjo"
 
