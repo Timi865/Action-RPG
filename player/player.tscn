@@ -1,8 +1,9 @@
-[gd_scene load_steps=55 format=3 uid="uid://celsu1s6d1liy"]
+[gd_scene load_steps=56 format=3 uid="uid://celsu1s6d1liy"]
 
 [ext_resource type="Texture2D" uid="uid://di3k5tnyggucr" path="res://player/player.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://dx0i7o4mnhcha" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://dv7hm1u4da8rs" path="res://shadows/medium_shadow.png" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://bpmoxb3dgugjo" path="res://damage_boxes/hitbox.gd" id="4_yw30f"]
 
 [sub_resource type="Animation" id="Animation_8t03j"]
 length = 0.001
@@ -569,5 +570,6 @@ position = Vector2(-1, 5)
 texture = ExtResource("3_g1dw6")
 
 [node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_yw30f")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
