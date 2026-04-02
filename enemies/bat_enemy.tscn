@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbcabvwcdgiwt"]
+[gd_scene load_steps=16 format=3 uid="uid://bbcabvwcdgiwt"]
 
 [ext_resource type="Script" uid="uid://dxe4puknf14da" path="res://enemies/bat_enemy.gd" id="1_5gx0a"]
 [ext_resource type="Texture2D" uid="uid://2vvf1p263oog" path="res://enemies/bat.png" id="1_e7gs6"]
@@ -75,6 +75,9 @@ nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_ss11r")
 nodes/StateMachine/position = Vector2(20, 100)
 node_connections = [&"output", 0, &"StateMachine"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gx0a"]
+radius = 5.0
+
 [node name="BatEnemy" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 7
@@ -107,3 +110,9 @@ anim_player = NodePath("../AnimationPlayer")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(8, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_5gx0a")
