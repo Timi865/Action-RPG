@@ -2,12 +2,12 @@ extends Node2D
 
 @export var GRASS_EFFECT: PackedScene
 
-@onready var area_2d: Area2D = $Area2D#this accesses the area 2d so i can use it in the script
+@onready var hurtbox: Hurtbox = $Hurtbox
 
 func _ready() -> void:
-	area_2d.area_entered.connect(_on_area_2d_area_entered)#this connects the signal in brackets to the code WITH code instead of from the editor which is more reliable:>
+	hurtbox.hurt.connect(_on_hurt)
 
-func _on_area_2d_area_entered(other_area_2d: Area2D) -> void:
+func _on_hurt(other_hitbox: Hitbox) -> void:
 	var grass_effect_instance = GRASS_EFFECT.instantiate()
 	get_tree().current_scene.add_child(grass_effect_instance)
 	grass_effect_instance.global_position = global_position

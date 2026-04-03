@@ -15,9 +15,9 @@ GRASS_EFFECT = ExtResource("2_2qnaq")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_kl2qe")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="."]
 script = ExtResource("4_pmnf0")
 metadata/_custom_type_script = "uid://cwfv2grkntc7p"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("RectangleShape2D_2qnaq")
