@@ -22,8 +22,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var state = playback.get_current_node()
 	match state:
-		"Idle" : pass
-		"Chase": 
+		"IdleState" : pass
+		"ChaseState": 
 			var player = get_player()
 			if player is Player:
 				velocity = global_position.direction_to(player.global_position) * SPEED
@@ -31,6 +31,7 @@ func _physics_process(delta: float) -> void:
 			else:
 				velocity = Vector2.ZERO
 			move_and_slide()
+		"HitState": pass
 				
 
 func get_player() -> Player:
