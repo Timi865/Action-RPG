@@ -14,7 +14,7 @@ const SPEED = 30
 
 
 func _ready() -> void:
-	hurtbox.hurt.connect(func(other_hitbox: Hurtbox):
+	hurtbox.hurt.connect(func(other_hitbox: Hitbox):
 		queue_free()
 	)
 
