@@ -10,11 +10,11 @@ const SPEED = 30
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/StateMachine/playback") as AnimationNodeStateMachinePlayback
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
-@onready var area_2d: Area2D = $Area2D
+@onready var hurtbox: Hurtbox = $Hurtbox
 
 
 func _ready() -> void:
-	area_2d.area_entered.connect(func(other_area_2d: Area2D):
+	hurtbox.hurt.connect(func(other_hitbox: Hurtbox):
 		queue_free()
 	)
 
