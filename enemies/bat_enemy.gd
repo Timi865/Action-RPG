@@ -15,9 +15,7 @@ const FRICTION = 500
 
 
 func _ready() -> void:
-	hurtbox.hurt.connect(func(other_hitbox: Hitbox):
-		queue_free()
-	)
+	hurtbox.hurt.connect(take_hit.call_deferred)
 
 
 func _physics_process(delta: float) -> void:
@@ -35,7 +33,11 @@ func _physics_process(delta: float) -> void:
 		"HitState": 
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 			move_and_slide()
-				
+
+func take_hit(other_hitbox: Hitbox) -> void:
+	velocity = other_hitbox.knockback_direction * 100
+	playback.start("Hitstate")
+	print("changed to the hitstate")
 
 func get_player() -> Player:
 	return get_tree().get_first_node_in_group("player")

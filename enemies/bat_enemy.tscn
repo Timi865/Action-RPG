@@ -85,7 +85,7 @@ advance_expression = "can_see_player() "
 advance_mode = 2
 advance_expression = "not can_see_player()"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ww8v4"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_grp10"]
 advance_mode = 2
 advance_expression = "velocity == vector2(0, 0)"
 
@@ -96,7 +96,7 @@ states/HitState/node = SubResource("AnimationNodeAnimation_erta8")
 states/HitState/position = Vector2(591, 100)
 states/IdleState/node = SubResource("AnimationNodeAnimation_v72ps")
 states/IdleState/position = Vector2(371, 100)
-transitions = ["Start", "IdleState", SubResource("AnimationNodeStateMachineTransition_gvrg5"), "IdleState", "ChaseState", SubResource("AnimationNodeStateMachineTransition_m7u13"), "ChaseState", "IdleState", SubResource("AnimationNodeStateMachineTransition_udr2s"), "HitState", "IdleState", SubResource("AnimationNodeStateMachineTransition_ww8v4")]
+transitions = ["Start", "IdleState", SubResource("AnimationNodeStateMachineTransition_gvrg5"), "IdleState", "ChaseState", SubResource("AnimationNodeStateMachineTransition_m7u13"), "ChaseState", "IdleState", SubResource("AnimationNodeStateMachineTransition_udr2s"), "HitState", "IdleState", SubResource("AnimationNodeStateMachineTransition_grp10")]
 graph_offset = Vector2(-203, 4)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_dmpjy"]
