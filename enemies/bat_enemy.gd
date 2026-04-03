@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 30
+const FRICTION = 500
 
 @export var aggrorange: = 64
 
@@ -31,7 +32,9 @@ func _physics_process(delta: float) -> void:
 			else:
 				velocity = Vector2.ZERO
 			move_and_slide()
-		"HitState": pass
+		"HitState": 
+			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+			move_and_slide()
 				
 
 func get_player() -> Player:
