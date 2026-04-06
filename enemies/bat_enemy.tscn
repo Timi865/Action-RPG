@@ -87,7 +87,7 @@ advance_expression = "not can_see_player()"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_grp10"]
 advance_mode = 2
-advance_expression = "velocity == vector2(0, 0)"
+advance_expression = "velocity == Vector2(0, 0)"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ss11r"]
 states/ChaseState/node = SubResource("AnimationNodeAnimation_f4281")
