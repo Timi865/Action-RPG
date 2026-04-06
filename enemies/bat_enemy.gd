@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 
 func take_hit(other_hitbox: Hitbox) -> void:
 	velocity = other_hitbox.knockback_direction * 100
-	playback.start("Hitstate")
+	playback.start("HitState")
 	print("changed to the hitstate")
 
 func get_player() -> Player:
