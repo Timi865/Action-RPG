@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 			move_and_slide()
 
 func take_hit(other_hitbox: Hitbox) -> void:
-	velocity = other_hitbox.knockback_direction * 100
+	velocity = other_hitbox.knockback_direction * other_hitbox.knockback_amount
 	playback.start("HitState")
 	print("changed to the hitstate")
 
