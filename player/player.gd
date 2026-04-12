@@ -3,6 +3,8 @@ class_name Player extends CharacterBody2D
 const SPEED = 100.0
 const ROLL_SPEED = 150
 
+@export var stats: Stats
+
 var input_vector: = Vector2.ZERO#by putting this variable at the top this means that i can use it in all functions
 var last_input_vector: = Vector2.ZERO
 
