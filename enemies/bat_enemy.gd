@@ -17,6 +17,7 @@ const FRICTION = 500
 
 func _ready() -> void:
 	hurtbox.hurt.connect(take_hit.call_deferred)
+	stats.no_health.connect(queue_free)
 
 
 func _physics_process(delta: float) -> void:
@@ -36,6 +37,7 @@ func _physics_process(delta: float) -> void:
 			move_and_slide()
 
 func take_hit(other_hitbox: Hitbox) -> void:
+	stats.health -= other_hitbox.damage#i created other hitbox in this function, it is basically just the hitbox of the player
 	velocity = other_hitbox.knockback_direction * other_hitbox.knockback_amount
 	playback.start("HitState")
 
