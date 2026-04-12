@@ -4,6 +4,7 @@ const SPEED = 30
 const FRICTION = 500
 
 @export var aggrorange: = 64
+@export var stats: Stats
 
 
 
