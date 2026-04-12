@@ -16,6 +16,7 @@ const FRICTION = 500
 
 
 func _ready() -> void:
+	stats = stats.duplicate()#this duplicates the stats resource so now every single bat has its own instance of health.
 	hurtbox.hurt.connect(take_hit.call_deferred)
 	stats.no_health.connect(queue_free)
 
