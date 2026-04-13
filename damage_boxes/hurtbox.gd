@@ -1,7 +1,7 @@
 class_name Hurtbox extends Area2D#by adding a class name you can create a custom node
 
 
-signal hurt(hitbox: Hitbox)
+signal hurt(hitbox: Hitbox)# custom signal
 
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
