@@ -1,6 +1,5 @@
 class_name Hurtbox extends Area2D#by adding a class name you can create a custom node
 
-
 signal hurt(hitbox: Hitbox)# custom signal
 
 func _ready() -> void:
@@ -8,4 +7,7 @@ func _ready() -> void:
 	
 func _on_area_entered(area_2D: Area2D) -> void:
 	if area_2D is not Hitbox: return
+	area_2D = area_2D as Hitbox#gives autocomplete
+	if self in area_2D.hit_targets: return# if we are in the list of hit targets in the hitbox then return
+	area_2D.hit_targets.append(self)#adds us to the list
 	hurt.emit(area_2D)

@@ -6,3 +6,6 @@ class_name Hitbox extends Area2D
 
 
 var hit_targets: Array
+
+func clear_hit_targets() -> void:
+	hit_targets.clear()
